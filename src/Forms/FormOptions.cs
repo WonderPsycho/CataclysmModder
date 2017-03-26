@@ -10,14 +10,15 @@ using System.IO;
 
 namespace CataclysmModder
 {
-    public partial class Options : Form
+    public partial class FormOptions : Form
     {
         public static bool DontFormatJson = false;
         public static bool IndentWithTabs = false;
         public static int IndentSpaces = 4;
         public static bool PreserveUnchanged = false;
+        public static string DefaultJsonFolder = @"C:\Games\cdda_test\data\json";
 
-        public Options()
+        public FormOptions()
         {
             InitializeComponent();
 
@@ -27,6 +28,7 @@ namespace CataclysmModder
             indentTabsCheck.Checked = IndentWithTabs;
             indentSpacesNumeric.Value = IndentSpaces;
             preserveUnchangedCheck.Checked = PreserveUnchanged;
+            defaultJsonFolderTextBox.Text = DefaultJsonFolder;
         }
 
         private void dontFormatJsonCheck_CheckedChanged(object sender, EventArgs e)
@@ -57,6 +59,11 @@ namespace CataclysmModder
             }
         }
 
+        private void defaultJsonFolderTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void SaveOptions()
         {
             StreamWriter write = new StreamWriter(new FileStream("options.ini", FileMode.Create));
@@ -64,6 +71,7 @@ namespace CataclysmModder
             write.WriteLine("indentWithTabs = " + IndentWithTabs);
             write.WriteLine("indentSpaces = " + IndentSpaces);
             write.WriteLine("preserveUnchanged = " + PreserveUnchanged);
+            write.WriteLine("defaultJsonFolder = " + DefaultJsonFolder);
             write.Close();
         }
 
@@ -104,6 +112,8 @@ namespace CataclysmModder
                         IndentSpaces = int.Parse(value.Trim());
                     else if (key.Equals("preserveunchanged"))
                         PreserveUnchanged = bool.Parse(value.Trim());
+                    else if (key.Equals("defaultjsonfolder"))
+                        DefaultJsonFolder = value.Trim();
                 }
                 catch (FormatException)
                 {
@@ -119,10 +129,12 @@ namespace CataclysmModder
             IndentWithTabs = indentTabsCheck.Checked;
             IndentSpaces = (int)indentSpacesNumeric.Value;
             PreserveUnchanged = preserveUnchangedCheck.Checked;
+            DefaultJsonFolder = defaultJsonFolderTextBox.Text;
 
             SaveOptions();
 
             this.Close();
         }
+
     }
 }

@@ -9,23 +9,23 @@ using System.Windows.Forms;
 
 namespace CataclysmModder
 {
-    public partial class ExportItemsForm : Form
+    public partial class FormExportItems : Form
     {
-        public ExportItemsForm()
+        public FormExportItems()
         {
             InitializeComponent();
 
             //Load up listbox
-            checkedListBox1.Items.Clear();
+            itemToExportCheckedListBox.Items.Clear();
             foreach (ItemDataWrapper data in Storage.OpenItems)
             {
-                checkedListBox1.Items.Add(data.Display);
+                itemToExportCheckedListBox.Items.Add(data.Display);
             }
 
             int index = 0;
             foreach (ItemDataWrapper data in Storage.OpenItems)
             {
-                checkedListBox1.SetItemChecked(index, data.Modified);
+                itemToExportCheckedListBox.SetItemChecked(index, data.Modified);
                 index++;
             }
         }
@@ -40,9 +40,9 @@ namespace CataclysmModder
 
             if (save.ShowDialog() == DialogResult.OK)
             {
-                int[] indices = new int[checkedListBox1.CheckedIndices.Count];
-                for (int c = 0; c < checkedListBox1.CheckedIndices.Count; c++)
-                    indices[c] = checkedListBox1.CheckedIndices[c];
+                int[] indices = new int[itemToExportCheckedListBox.CheckedIndices.Count];
+                for (int c = 0; c < itemToExportCheckedListBox.CheckedIndices.Count; c++)
+                    indices[c] = itemToExportCheckedListBox.CheckedIndices[c];
                 Storage.ExportFile(save.FileName, indices);
                 DialogResult = DialogResult.OK;
                 Close();

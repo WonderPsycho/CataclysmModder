@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace CataclysmModder
 {
@@ -121,13 +122,14 @@ namespace CataclysmModder
             }
         }
 
-        private void openRawsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openJsonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!checkSave()) return;
 
             //Choose a directory
             FolderBrowserDialog open = new FolderBrowserDialog();
             open.ShowNewFolderButton = false;
+            open.SelectedPath = FormOptions.DefaultJsonFolder;
 
             //Load recognized JSON files from that directory
             if (open.ShowDialog() == DialogResult.OK)
@@ -347,7 +349,7 @@ namespace CataclysmModder
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new About().ShowDialog();
+            DialogResult result = MessageBox.Show("Cataclysm Modder Version " + Assembly.GetExecutingAssembly().GetName().Version.ToString(), "About Cataclysm Modder", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void nextQuicksearchResultToolStripMenuItem_Click(object sender, EventArgs e)
@@ -377,18 +379,19 @@ namespace CataclysmModder
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Options().ShowDialog();
+            new FormOptions().ShowDialog();
         }
 
         private void exportItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ExportItemsForm().ShowDialog();
+            new FormExportItems().ShowDialog();
         }
 
         private void testAllItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Storage.TestAllItems();
         }
+
     }
 
 

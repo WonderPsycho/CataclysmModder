@@ -322,21 +322,21 @@ namespace CataclysmModder
 
             fileDef[(int)FileType.ITEMS] = new CataFile(
                 "id",
-                new JsonSchema("jsonschema_items.txt"));
+                new JsonSchema("schema_items.txt"));
             fileDef[(int)FileType.BIONICS] = new CataFile("id");
             fileDef[(int)FileType.ITEM_GROUPS] = new CataFile(
                 "id",
-                new JsonSchema("jsonschema_itemgroup.txt"));
+                new JsonSchema("schema_itemgroup.txt"));
             fileDef[(int)FileType.MATERIALS] = new CataFile("ident");
             fileDef[(int)FileType.MONSTER_GROUPS] = new CataFile("name");
             fileDef[(int)FileType.NAMES] = new CataFile("name");
             fileDef[(int)FileType.PROFESSIONS] = new CataFile(
                 "ident",
-                new JsonSchema("jsonschema_professions.txt"));
+                new JsonSchema("schema_professions.txt"));
             fileDef[(int)FileType.RECIPES] = new CataFile(
                 "result",
                 "id_suffix",
-                new JsonSchema("jsonschema_recipes.txt"));
+                new JsonSchema("schema_recipes.txt"));
             fileDef[(int)FileType.SKILLS] = new CataFile("ident");
             fileDef[(int)FileType.SNIPPETS] = null;
             fileDef[(int)FileType.NONE] = null;
@@ -458,11 +458,11 @@ namespace CataclysmModder
             else if (ftype == FileType.RECIPES)
             {
                 //Default parsing
-                foreach (Dictionary<string, object> item in (object[])((Dictionary<string, object>)json)["recipes"])
-                    newItems.Add(new ItemDataWrapper(item, index));
+                ////foreach (Dictionary<string, object> item in (object[])((Dictionary<string, object>)json)["recipes"])
+                ////    newItems.Add(new ItemDataWrapper(item, index));
 
                 //Remove categories
-                CraftCategories = (object[])((Dictionary<string, object>)json)["categories"];
+                ////CraftCategories = (object[])((Dictionary<string, object>)json)["categories"];
                 /*List<string> craftcats = new List<string>();
                 foreach (ItemDataWrapper c in newItems)
                 {
@@ -482,6 +482,7 @@ namespace CataclysmModder
             }
             else if (ftype == FileType.SKILLS)
             {
+                /*
                 foreach (object[] item in (object[])json)
                 {
                     Dictionary<string, object> dict = new Dictionary<string, object>();
@@ -492,6 +493,7 @@ namespace CataclysmModder
                         dict.Add("tags", item[3]);
                     newItems.Add(new ItemDataWrapper(dict, index));
                 }
+                */
             }
             else if (ftype != FileType.NONE)
             {
@@ -589,7 +591,7 @@ namespace CataclysmModder
 
                 sb.Append("]");
 
-                if (Options.DontFormatJson)
+                if (FormOptions.DontFormatJson)
                     write.Write(sb.ToString());
                 else
                     write.Write(SpaceJson(sb.ToString(), bracketBlockLevel));
@@ -636,7 +638,7 @@ namespace CataclysmModder
 
                 sb.Append("]}");
 
-                if (Options.DontFormatJson)
+                if (FormOptions.DontFormatJson)
                     write.Write(sb.ToString());
                 else
                     write.Write(SpaceJson(sb.ToString(), bracketBlockLevel));
@@ -679,11 +681,11 @@ namespace CataclysmModder
             string nlindent = "\n";
 
             string indent = "";
-            if (Options.IndentWithTabs)
+            if (FormOptions.IndentWithTabs)
                 indent = "\t";
             else
             {
-                for (int c = 0; c < Options.IndentSpaces; c++)
+                for (int c = 0; c < FormOptions.IndentSpaces; c++)
                     indent += " ";
             }
 

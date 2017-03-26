@@ -318,25 +318,25 @@ namespace CataclysmModder
         {
             InitializeDataSources();
 
-            //Editing control needs to be set in Form1 ctor using FileDefSetControl
+            //Editing control needs to be set in FormMain ctor using FileDefSetControl
 
             fileDef[(int)FileType.ITEMS] = new CataFile(
                 "id",
-                new JsonSchema("CataclysmModder.schemas.items.txt"));
+                new JsonSchema("jsonschema_items.txt"));
             fileDef[(int)FileType.BIONICS] = new CataFile("id");
             fileDef[(int)FileType.ITEM_GROUPS] = new CataFile(
                 "id",
-                new JsonSchema("CataclysmModder.schemas.item_group.txt"));
+                new JsonSchema("jsonschema_itemgroup.txt"));
             fileDef[(int)FileType.MATERIALS] = new CataFile("ident");
             fileDef[(int)FileType.MONSTER_GROUPS] = new CataFile("name");
             fileDef[(int)FileType.NAMES] = new CataFile("name");
             fileDef[(int)FileType.PROFESSIONS] = new CataFile(
                 "ident",
-                new JsonSchema("CataclysmModder.schemas.professions.txt"));
+                new JsonSchema("jsonschema_professions.txt"));
             fileDef[(int)FileType.RECIPES] = new CataFile(
                 "result",
                 "id_suffix",
-                new JsonSchema("CataclysmModder.schemas.recipes.txt"));
+                new JsonSchema("jsonschema_recipes.txt"));
             fileDef[(int)FileType.SKILLS] = new CataFile("ident");
             fileDef[(int)FileType.SNIPPETS] = null;
             fileDef[(int)FileType.NONE] = null;

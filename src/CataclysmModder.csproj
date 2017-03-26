@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3E8A156-EF49-46C9-9387-8FDA4F6ECAE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CataclysmModder</RootNamespace>
+    <AssemblyName>CataclysmModder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>..\obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>PdbOnly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>..\data\ico\ico32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>..\obj</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>..\obj</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CataclysmHelper\GroupedData.cs" />
+    <Compile Include="CataclysmHelper\IssueTracker.cs" />
+    <Compile Include="CataclysmHelper\JsonSchema.cs" />
+    <Compile Include="CataclysmHelper\Storage.cs" />
+    <Compile Include="CataclysmHelper\WinformsUtil.cs" />
+    <Compile Include="GUI\Forms\ExportItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\ExportItemsForm.Designer.cs">
+      <DependentUpon>ExportItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\AmmoValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\AmmoValues.Designer.cs">
+      <DependentUpon>AmmoValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ArmorValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ArmorValues.Designer.cs">
+      <DependentUpon>ArmorValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\BookValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\BookValues.Designer.cs">
+      <DependentUpon>BookValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ComestibleValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ComestibleValues.Designer.cs">
+      <DependentUpon>ComestibleValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ContainValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ContainValues.Designer.cs">
+      <DependentUpon>ContainValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\GenericItemValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\GenericItemValues.Designer.cs">
+      <DependentUpon>GenericItemValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\GunmodValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\GunmodValues.Designer.cs">
+      <DependentUpon>GunmodValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\GunValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\GunValues.Designer.cs">
+      <DependentUpon>GunValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ItemGroupValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ItemGroupValues.Designer.cs">
+      <DependentUpon>ItemGroupValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ProfessionValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ProfessionValues.Designer.cs">
+      <DependentUpon>ProfessionValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\RecipeControl.cs">
+      <SubType>UserControl</SubType>
+      <DependentUpon>ToolValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\RecipeControl.Designer.cs">
+      <DependentUpon>RecipeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ToolValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\ToolValues.Designer.cs">
+      <DependentUpon>ToolValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\VehiclePartValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\Values\VehiclePartValues.Designer.cs">
+      <DependentUpon>VehiclePartValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CataclysmHelper\CataclysmColor.cs" />
+    <Compile Include="CataclysmHelper\CataclysmFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GUI\UserControls\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="GUI\Forms\ExportItemsForm.resx">
+      <DependentUpon>ExportItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\AmmoValues.resx">
+      <DependentUpon>AmmoValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\ArmorValues.resx">
+      <DependentUpon>ArmorValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\BookValues.resx">
+      <DependentUpon>BookValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\ComestibleValues.resx">
+      <DependentUpon>ComestibleValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\ContainValues.resx">
+      <DependentUpon>ContainValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\GenericItemValues.resx">
+      <DependentUpon>GenericItemValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\GunmodValues.resx">
+      <DependentUpon>GunmodValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\GunValues.resx">
+      <DependentUpon>GunValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\ItemGroupValues.resx">
+      <DependentUpon>ItemGroupValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\ProfessionValues.resx">
+      <DependentUpon>ProfessionValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\RecipeControl.resx">
+      <DependentUpon>RecipeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\ToolValues.resx">
+      <DependentUpon>ToolValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\Values\VehiclePartValues.resx">
+      <DependentUpon>VehiclePartValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="GUI\UserControls\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\data\jsonschema\jsonschema_items.txt">
+      <LogicalName>jsonschema_items.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\jsonschema\jsonschema_itemgroup.txt">
+      <LogicalName>jsonschema_itemgroup.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\jsonschema\jsonschema_recipes.txt">
+      <LogicalName>jsonschema_recipes.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\jsonschema\jsonschema_professions.txt">
+      <LogicalName>jsonschema_professions.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\data\jsonschema\jsonschema_vehicleparts.txt">
+      <LogicalName>jsonschema_vehicleparts.txt</LogicalName>
+    </EmbeddedResource>
+    <Folder Include="CataclysmHelper" />
+    <Folder Include="GUI" />
+    <Folder Include="GUI\Forms" />
+    <Folder Include="GUI\UserControls" />
+    <Folder Include="GUI\UserControls\Values" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

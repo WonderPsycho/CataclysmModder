@@ -91,8 +91,8 @@ namespace CataclysmModder
             if (WinformsUtil.Resetting > 0 && typeComboBox.Text.Equals("")) return;
 
             //Swap out extra boxes
-            Form1.Instance.HideItemExtensions();
-            foreach (Control c in Form1.Instance.Controls)
+            FormMain.Instance.HideItemExtensions();
+            foreach (Control c in FormMain.Instance.Controls)
             {
                 if (c.Tag is ItemExtensionFormTag
                     && ((ItemExtensionFormTag)c.Tag).itemType.Equals(
@@ -104,7 +104,7 @@ namespace CataclysmModder
             }
 
             //Fill defaults for missing keys
-            foreach (Control c in Form1.Instance.Controls)
+            foreach (Control c in FormMain.Instance.Controls)
             {
                 if (c.Tag is DataFormTag && c.Visible)
                 {
@@ -135,7 +135,7 @@ namespace CataclysmModder
         private void flagsCheckedListBox_selectedIndexChanged(object sender, EventArgs e)
         {
             //Post flag-specific help
-            Form1.Instance.SetHelpText(((JsonFormTag.HelpItem)flagsCheckedListBox.SelectedItem).help);
+            FormMain.Instance.SetHelpText(((JsonFormTag.HelpItem)flagsCheckedListBox.SelectedItem).help);
         }
 
         private void techniquesCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)

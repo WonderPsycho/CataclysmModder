@@ -434,7 +434,7 @@ namespace CataclysmModder
 
         public static void DisplayHelp(object sender, EventArgs e)
         {
-            Form1.Instance.SetHelpText(((JsonFormTag)((Control)sender).Tag).help);
+            FormMain.Instance.SetHelpText(((JsonFormTag)((Control)sender).Tag).help);
         }
 
         /// <summary>

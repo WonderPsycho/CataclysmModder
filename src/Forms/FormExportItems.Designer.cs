@@ -1,6 +1,6 @@
 ﻿namespace CataclysmModder
 {
-    partial class ExportItemsForm
+    partial class FormExportItems
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.itemToExportCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.itemsToExportLabel = new System.Windows.Forms.Label();
             this.exportButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // checkedListBox1
+            // itemToExportCheckedListBox
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 29);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(158, 289);
-            this.checkedListBox1.TabIndex = 0;
+            this.itemToExportCheckedListBox.FormattingEnabled = true;
+            this.itemToExportCheckedListBox.Location = new System.Drawing.Point(16, 36);
+            this.itemToExportCheckedListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.itemToExportCheckedListBox.Name = "itemToExportCheckedListBox";
+            this.itemToExportCheckedListBox.Size = new System.Drawing.Size(209, 344);
+            this.itemToExportCheckedListBox.TabIndex = 0;
             // 
-            // label1
+            // itemsToExportLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Items to export:";
+            this.itemsToExportLabel.AutoSize = true;
+            this.itemsToExportLabel.Location = new System.Drawing.Point(17, 16);
+            this.itemsToExportLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.itemsToExportLabel.Name = "itemsToExportLabel";
+            this.itemsToExportLabel.Size = new System.Drawing.Size(104, 17);
+            this.itemsToExportLabel.TabIndex = 1;
+            this.itemsToExportLabel.Text = "Items to export:";
             // 
             // exportButton
             // 
-            this.exportButton.Location = new System.Drawing.Point(13, 335);
+            this.exportButton.Location = new System.Drawing.Point(17, 412);
+            this.exportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(75, 23);
+            this.exportButton.Size = new System.Drawing.Size(100, 28);
             this.exportButton.TabIndex = 2;
             this.exportButton.Text = "Export";
             this.exportButton.UseVisualStyleBackColor = true;
@@ -63,27 +66,30 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(95, 335);
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(127, 412);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 3;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
-            // ExportItemsForm
+            // FormExportItems
             // 
             this.AcceptButton = this.exportButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(186, 370);
+            this.ClientSize = new System.Drawing.Size(248, 455);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.exportButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.itemsToExportLabel);
+            this.Controls.Add(this.itemToExportCheckedListBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ExportItemsForm";
+            this.Name = "FormExportItems";
             this.Text = "Export Items";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -92,8 +98,8 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckedListBox itemToExportCheckedListBox;
+        private System.Windows.Forms.Label itemsToExportLabel;
         private System.Windows.Forms.Button exportButton;
         private System.Windows.Forms.Button cancelButton;
     }

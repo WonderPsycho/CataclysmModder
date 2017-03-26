@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "ident": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "required": false
+    },
+    "type": {
+      "pattern": "skill",
+      "type": "string",
+      "required": true
+    }
+  }
+}

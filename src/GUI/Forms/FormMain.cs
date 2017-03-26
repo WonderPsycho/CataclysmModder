@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace CataclysmModder
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public static Form1 Instance { get; private set; }
+        public static FormMain Instance { get; private set; }
 
         public GunmodValues GunModControl;
         public ComestibleValues ComestibleControl;
@@ -23,7 +23,7 @@ namespace CataclysmModder
         Point mainPanelLocation;
 
 
-        public Form1()
+        public FormMain()
         {
             Instance = this;
             Storage.InitializeFileDefs();
@@ -296,7 +296,7 @@ namespace CataclysmModder
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!checkSave())
             {
